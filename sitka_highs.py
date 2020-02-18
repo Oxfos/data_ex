@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-filename = 'data/sitka_weather_2018_simple.csv'
+filename = 'data/los_altos_2019.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
@@ -10,9 +10,9 @@ with open(filename) as f:
     # Get dates, and high and low temperatures from this file.
     dates, highs, lows = [], [], []
     for row in reader:
-        current_date = datetime.strptime(row[2], '%Y-%m-%d')
-        high = int(row[5])
-        low = int(row[6])
+        current_date = datetime.strptime(row[5], '%Y-%m-%d')
+        high = int(row[8])
+        low = int(row[9])
         dates.append(current_date)
         highs.append(high)
         lows.append(low)
