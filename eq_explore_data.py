@@ -12,10 +12,22 @@ for eq_dict in all_eq_dicts:
     mag = eq_dict['properties']['mag']
     mags.append(mag)
 
+"""
 location = []
 for eq_dict in all_eq_dicts:
     coord = (eq_dict['geometry']['coordinates'][0], 
         eq_dict['geometry']['coordinates'][1])
     location.append(coord)
+"""
 
-print(location[:10])
+mags, lons, lats = [], [], []
+
+for eq_dict in all_eq_dicts:
+    mag = eq_dict['properties']['mag']
+    lon = eq_dict['geometry']['coordinates'][0]
+    lat = eq_dict['geometry']['coordinates'][1]
+    mags.append(mag)
+    lons.append(lon)
+    lats.append(lat)
+
+print(mags[:10],lons[:10],lats[:10])
